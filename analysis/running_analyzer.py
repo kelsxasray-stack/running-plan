@@ -176,7 +176,7 @@ class RunningAnalyzer:
         ax3.set_title('🏷️ 活动类型分布 (按里程)', fontsize=12, fontweight='bold')
         ax3.set_ylabel('')
         
-        # 4. 心率分布直方���
+        # 4. 心率分布直方图
         ax4 = plt.subplot(3, 3, 4)
         ax4.hist(self.df['平均心率'].dropna(), bins=30, color='#FF6B6B', alpha=0.7, edgecolor='black')
         ax4.set_title('💓 平均心率分布', fontsize=12, fontweight='bold')
@@ -237,14 +237,7 @@ class RunningAnalyzer:
 
 # 主函数
 if __name__ == '__main__':
-    # 注意: 需要将数据保存为 CSV 文件
-    # analyzer = RunningAnalyzer('running_data.csv')
-    # stats, monthly, activity = analyzer.generate_report()
-    # analyzer.create_visualizations()
-    
-    print("跑步数据分析脚本已准备好！")
-    print("使用方法:")
-    print("  1. 将跑步数据保存为 running_data.csv")
-    print("  2. analyzer = RunningAnalyzer('running_data.csv')")
-    print("  3. analyzer.generate_report()")
-    print("  4. analyzer.create_visualizations()")
+    # 使用示例
+    analyzer = RunningAnalyzer('data/running_data.tsv')
+    stats, monthly, activity = analyzer.generate_report()
+    analyzer.create_visualizations()
